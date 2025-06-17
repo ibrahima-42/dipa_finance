@@ -1,3 +1,4 @@
+import 'package:dipa/components/financial.dart';
 import 'package:dipa/components/invest.dart';
 import 'package:dipa/components/received.dart';
 import 'package:dipa/components/send.dart';
@@ -102,19 +103,36 @@ class _HomeState extends State<Home> {
                   child: Stack(
                     children: [
                       Container(
-                        margin: const EdgeInsets.only(top: 90),
+                        margin: const EdgeInsets.only(top: 100),
                         decoration: BoxDecoration(
                           color: Colors.white,
                           // borderRadius: BorderRadius.circular(20),
                         ),
+                        child: Padding(
+                          padding: EdgeInsets.only(left: 16,right: 16,top: 16),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              SizedBox(height: MediaQuery.of(context).size.height * 0.1),
+                              Financial(),
+                              SizedBox(height: 16),
+                              Text('Recent Transactions',style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 16,
+                                fontWeight: FontWeight.w600,
+                              ),),
+                              SizedBox(height: 16),
+                              
+                            ]),
+                        ),
                       ),
                       Positioned(
-                        top: 5,
+                        top: 0,
                         left: 0,
                         right: 0,
                         child: Container(
-                          margin: const EdgeInsets.all(10),
-                          height: 160,                        
+                          margin: const EdgeInsets.all(16),
+                          height: 160,
                           decoration: BoxDecoration(
                             color: const Color.fromARGB(255, 255, 255, 255),
                             borderRadius: BorderRadius.circular(20),
@@ -132,26 +150,43 @@ class _HomeState extends State<Home> {
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text('YOUR BALANCE',style: TextStyle(
-                                  fontSize: 13,
-                                  fontWeight: FontWeight.w400,
-                                ),),
-                                SizedBox(height: 5,),
+                                Text(
+                                  'YOUR BALANCE',
+                                  style: TextStyle(
+                                    fontSize: 13,
+                                    fontWeight: FontWeight.w400,
+                                  ),
+                                ),
+                                SizedBox(height: 5),
                                 Row(
                                   children: [
-                                    Text(showBalance?'\$ ${montant}':'********',style: TextStyle(
-                                      fontSize: 22,
-                                      fontWeight: FontWeight.w600,
-                                    ),),
-                                    SizedBox(width: 8,),
-                                    IconButton(onPressed: (){
-                                      setState(() {
-                                        showBalance = !showBalance;
-                                      });
-                                    }, icon: Icon(showBalance? Icons.visibility_off: Icons.visibility,color: Colors.grey,size: 20,))
+                                    Text(
+                                      showBalance
+                                          ? '\$ ${montant}'
+                                          : '********',
+                                      style: TextStyle(
+                                        fontSize: 22,
+                                        fontWeight: FontWeight.w600,
+                                      ),
+                                    ),
+                                    SizedBox(width: 8),
+                                    IconButton(
+                                      onPressed: () {
+                                        setState(() {
+                                          showBalance = !showBalance;
+                                        });
+                                      },
+                                      icon: Icon(
+                                        showBalance
+                                            ? Icons.visibility_off
+                                            : Icons.visibility,
+                                        color: Colors.grey,
+                                        size: 20,
+                                      ),
+                                    ),
                                   ],
                                 ),
-                                SizedBox(height: 10,),
+                                SizedBox(height: 10),
                                 Row(
                                   children: [
                                     Send(),
@@ -162,12 +197,12 @@ class _HomeState extends State<Home> {
                                     Spacer(),
                                     Top(),
                                   ],
-                                )
+                                ),
                               ],
                             ),
                           ),
                         ),
-                      )
+                      ),
                     ],
                   ),
                 ),
@@ -177,5 +212,5 @@ class _HomeState extends State<Home> {
         ],
       ),
     );
-  } 
+  }
 }
