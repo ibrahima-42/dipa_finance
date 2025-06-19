@@ -3,6 +3,7 @@ import 'package:dipa/components/invest.dart';
 import 'package:dipa/components/received.dart';
 import 'package:dipa/components/send.dart';
 import 'package:dipa/components/top.dart';
+import 'package:dipa/components/youtube.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatefulWidget {
@@ -122,6 +123,7 @@ class _HomeState extends State<Home> {
                                 fontWeight: FontWeight.w600,
                               ),),
                               SizedBox(height: 16),
+                              Youtube(),
                               
                             ]),
                         ),
