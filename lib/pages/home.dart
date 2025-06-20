@@ -1,7 +1,9 @@
 import 'package:dipa/components/financial.dart';
 import 'package:dipa/components/invest.dart';
+import 'package:dipa/components/ovo.dart';
 import 'package:dipa/components/received.dart';
 import 'package:dipa/components/send.dart';
+import 'package:dipa/components/strip.dart';
 import 'package:dipa/components/top.dart';
 import 'package:dipa/components/youtube.dart';
 import 'package:flutter/material.dart';
@@ -122,8 +124,12 @@ class _HomeState extends State<Home> {
                                 fontSize: 16,
                                 fontWeight: FontWeight.w600,
                               ),),
-                              SizedBox(height: 16),
+                              SizedBox(height: 10),
                               Youtube(),
+                              SizedBox(height: 3),
+                              Strip(),
+                              SizedBox(height: 3),
+                              Ovo(),
                               
                             ]),
                         ),

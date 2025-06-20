@@ -8,24 +8,32 @@ class Youtube extends StatelessWidget {
     return ListTile(
       leading: ClipRRect(
         borderRadius: BorderRadius.circular(50),
-        child: Image.asset('assets/images/youtube.avif',width: 30,height: 30,),
+        child: Image.asset('assets/images/youtube.avif', width: 30, height: 30),
       ),
-      title: Text('Youtube',style: TextStyle(
-        color: Colors.black,
-        fontSize: 14,
-        fontWeight: FontWeight.w600,
-      ),),
-      subtitle: Text('Abonnement',style: TextStyle(
-        color: Colors.black,
-        fontSize: 12,
-        fontWeight: FontWeight.w400,
+      title: Text(
+        'Youtube',
+        style: TextStyle(
+          color: Colors.black,
+          fontSize: 14,
+          fontWeight: FontWeight.w600,
+        ),
       ),
+      subtitle: Text(
+        'Abonnement',
+        style: TextStyle(
+          color: Colors.black,
+          fontSize: 10,
+          fontWeight: FontWeight.w400,
+        ),
       ),
-      trailing: Text('1000',style: TextStyle(
-        color: Colors.black,
-        fontSize: 16,
-        fontWeight: FontWeight.w600,
-      ),),
+      trailing: Text(
+        '-1000',
+        style: TextStyle(
+          color: const Color.fromARGB(255, 207, 62, 62),
+          fontSize: 12,
+          fontWeight: FontWeight.w600,
+        ),
+      ),
     );
   }
 }
