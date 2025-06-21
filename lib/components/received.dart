@@ -1,3 +1,4 @@
+import 'package:dipa/pages/recu.dart';
 import 'package:flutter/material.dart';
 
 class Received extends StatelessWidget {
@@ -7,13 +8,18 @@ class Received extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Container(
-          padding: const EdgeInsets.all(8),
-          decoration: BoxDecoration(
-            color: const Color.fromARGB(255, 67, 63, 122),
-            borderRadius: BorderRadius.circular(20),
-          ) ,
-          child: const Icon(Icons.arrow_downward,color: Colors.white,size: 20,),
+        GestureDetector(
+          onTap: (){
+            Navigator.push(context, MaterialPageRoute(builder: (context) => Recu()));
+          },
+          child: Container(
+            padding: const EdgeInsets.all(8),
+            decoration: BoxDecoration(
+              color: const Color.fromARGB(255, 67, 63, 122),
+              borderRadius: BorderRadius.circular(20),
+            ) ,
+            child: const Icon(Icons.arrow_downward,color: Colors.white,size: 20,),
+          ),
         ),
         Text('Received',style: TextStyle(
           color: Colors.black,

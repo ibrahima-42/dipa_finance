@@ -76,7 +76,6 @@ class _HomeState extends State<Home> {
                         ],
                       ),
                       Spacer(),
-
                       //Notifications
                       Stack(
                         children: [
@@ -103,115 +102,116 @@ class _HomeState extends State<Home> {
                   ),
                 ),
                 Expanded(
-                  child: Stack(
-                    children: [
-                      Container(
-                        margin: const EdgeInsets.only(top: 100),
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          // borderRadius: BorderRadius.circular(20),
-                        ),
-                        child: Padding(
-                          padding: EdgeInsets.only(left: 16,right: 16,top: 16),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              SizedBox(height: MediaQuery.of(context).size.height * 0.1),
-                              Financial(),
-                              SizedBox(height: 16),
-                              Text('Recent Transactions',style: TextStyle(
-                                color: Colors.black,
-                                fontSize: 16,
-                                fontWeight: FontWeight.w600,
-                              ),),
-                              SizedBox(height: 10),
-                              Youtube(),
-                              SizedBox(height: 3),
-                              Strip(),
-                              SizedBox(height: 3),
-                              Ovo(),
-                              
-                            ]),
-                        ),
-                      ),
-                      Positioned(
-                        top: 0,
-                        left: 0,
-                        right: 0,
-                        child: Container(
-                          margin: const EdgeInsets.all(16),
-                          height: 160,
+                  child: SingleChildScrollView(
+                    child: Stack(
+                      children: [
+                        Container(
+                          height: MediaQuery.of(context).size.height,
+                          margin: const EdgeInsets.only(top: 100),
                           decoration: BoxDecoration(
-                            color: const Color.fromARGB(255, 255, 255, 255),
-                            borderRadius: BorderRadius.circular(20),
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.grey.withOpacity(0.5),
-                                spreadRadius: 2,
-                                blurRadius: 3,
-                                offset: const Offset(0, 1),
-                              ),
-                            ],
+                            color: Colors.white,
+                            // borderRadius: BorderRadius.circular(20),
                           ),
                           child: Padding(
-                            padding: const EdgeInsets.all(16.0),
+                            padding: EdgeInsets.only(left: 16,right: 16,top: 16),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text(
-                                  'YOUR BALANCE',
-                                  style: TextStyle(
-                                    fontSize: 13,
-                                    fontWeight: FontWeight.w400,
-                                  ),
-                                ),
-                                SizedBox(height: 5),
-                                Row(
-                                  children: [
-                                    Text(
-                                      showBalance
-                                          ? '\$ ${montant}'
-                                          : '********',
-                                      style: TextStyle(
-                                        fontSize: 22,
-                                        fontWeight: FontWeight.w600,
-                                      ),
-                                    ),
-                                    SizedBox(width: 8),
-                                    IconButton(
-                                      onPressed: () {
-                                        setState(() {
-                                          showBalance = !showBalance;
-                                        });
-                                      },
-                                      icon: Icon(
-                                        showBalance
-                                            ? Icons.visibility_off
-                                            : Icons.visibility,
-                                        color: Colors.grey,
-                                        size: 20,
-                                      ),
-                                    ),
-                                  ],
-                                ),
+                                SizedBox(height: 100,),
+                                Financial(),
+                                SizedBox(height: 16),
+                                Text('Recent Transactions',style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w600,
+                                ),),
                                 SizedBox(height: 10),
-                                Row(
-                                  children: [
-                                    Send(),
-                                    Spacer(),
-                                    Received(),
-                                    Spacer(),
-                                    Invest(),
-                                    Spacer(),
-                                    Top(),
-                                  ],
+                                Youtube(),
+                                Strip(),
+                                Ovo(),
+                                Youtube(),
+                              ]),
+                          ),
+                        ),
+                        Positioned(
+                          top: 0,
+                          left: 0,
+                          right: 0,
+                          child: Container(
+                            margin: const EdgeInsets.all(16),
+                            height: 170,
+                            decoration: BoxDecoration(
+                              color: const Color.fromARGB(255, 255, 255, 255),
+                              borderRadius: BorderRadius.circular(20),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.grey.withOpacity(0.5),
+                                  spreadRadius: 2,
+                                  blurRadius: 3,
+                                  offset: const Offset(0, 1),
                                 ),
                               ],
                             ),
+                            child: Padding(
+                              padding: const EdgeInsets.all(16.0),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    'YOUR BALANCE',
+                                    style: TextStyle(
+                                      fontSize: 13,
+                                      fontWeight: FontWeight.w400,
+                                    ),
+                                  ),
+                                  SizedBox(height: 5),
+                                  Row(
+                                    children: [
+                                      Text(
+                                        showBalance
+                                            ? '\$ ${montant}'
+                                            : '********',
+                                        style: TextStyle(
+                                          fontSize: 22,
+                                          fontWeight: FontWeight.w600,
+                                        ),
+                                      ),
+                                      SizedBox(width: 8),
+                                      IconButton(
+                                        onPressed: () {
+                                          setState(() {
+                                            showBalance = !showBalance;
+                                          });
+                                        },
+                                        icon: Icon(
+                                          showBalance
+                                              ? Icons.visibility_off
+                                              : Icons.visibility,
+                                          color: Colors.grey,
+                                          size: 20,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                  SizedBox(height: 10),
+                                  Row(
+                                    children: [
+                                      Send(),
+                                      Spacer(),
+                                      Received(),
+                                      Spacer(),
+                                      Invest(),
+                                      Spacer(),
+                                      Top(),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                            ),
                           ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
               ],
