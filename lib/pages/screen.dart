@@ -13,7 +13,7 @@ class Screen extends StatelessWidget {
         child: Center(
           child: Text('Dipa',style: TextStyle(
             color: Colors.white,
-            fontSize: 24,
+            fontSize: 44,
             fontWeight: FontWeight.w600,
           ),),
         ),

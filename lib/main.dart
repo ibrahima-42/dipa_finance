@@ -1,5 +1,4 @@
 import 'package:dipa/components/Nav.dart';
-import 'package:dipa/pages/home.dart';
 import 'package:dipa/pages/screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';

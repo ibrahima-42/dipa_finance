@@ -32,6 +32,7 @@ class _NavState extends State<Nav> {
     return Scaffold(
       body:_pages[_currentIndex] ,
       bottomNavigationBar: BottomNavigationBar(
+        enableFeedback: false,
         type: BottomNavigationBarType.fixed,
         backgroundColor: Colors.white,
         selectedItemColor:  Color.fromARGB(255, 67, 63, 122),
